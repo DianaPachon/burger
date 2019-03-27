@@ -1,18 +1,29 @@
 
-//Set up MySql connection
 var mysql = require("mysql");
-//To read and set any environment variables with the dotenv package
-require("dotenv").config();
+
+var connection;
+
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else{
+  connection = mysql.createConnection({
+    host: "localhost",
+    port:3306,
+    user: "root",
+    password: "root",
+    database: "burgers_db"
+  });
+};
 
 
-// //Settings to connect to clearDB so the app can be deployed to heroku
-// var connection = mysql.createConnection({
-//     host: "us-cdbr-iron-east-03.cleardb.net",
-//     user: "b735928627ace3",
-//     password: process.env.PASSW,
-//     database: "heroku_6955d38c9d6a5ef"
-// })
 
 
-//Export connection so ORM can use it
+connection.connect(function(err) {
+  if (err) {
+    console.error("error connecting: " + err.stack);
+    return;
+  }
+  console.log("connected as id " + connection.threadId);
+});
+
 module.exports = connection;
