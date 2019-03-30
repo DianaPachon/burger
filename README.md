@@ -1,13 +1,13 @@
 *EAT DA BURGER*
 
-**Description
+**Description**
 
 This application demonstrates a simple full stack application that Materialize framework and the backend implemented with Node.js, Express and MySQL database.
 
 The user enters the name of the burger, populates and add the information into database and is display on the site.  The user can eat any burger by clicking on it, which moves it into the adjacent column and updates its status accordingly in the database.
 
 
-**Technology
+**Technology**
 
 - Node.js
 
@@ -18,7 +18,7 @@ The user enters the name of the burger, populates and add the information into d
 
 
 
-**Running Locally 
+**Running Locally**
 
 LOCALHOST:5060
 
