@@ -25,7 +25,8 @@ $(function() {
         );
     });
 
-    $("#post_burger").on("submit", function(event) {
+    $(".create-form").on("submit", function(event) {
+  
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
@@ -39,7 +40,6 @@ $(function() {
             data: newBurger
         }).then(
             function(data) {
-                console.log(data);
             // console.log("created new burger");
             // Reload the page to get the updated list
             location.reload();
